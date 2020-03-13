@@ -34,6 +34,7 @@ func main() {
 	// Register callbacks
 	dg.AddHandler(handlers.Ready)
 	dg.AddHandler(handlers.MessageCreate)
+	dg.AddHandler(handlers.ChannelJoin)
 
 	// Open the websocket and begin listening.
 	err = dg.Open()

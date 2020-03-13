@@ -28,4 +28,15 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	delegates.RemindClark(s, m)
 	delegates.LoopSteve(s, m)
 	delegates.DdosRob(s, m)
+	delegates.MoveRob(s, m)
+	delegates.KickMe(s, m)
+	delegates.ToggleClarov(s, m)
+}
+
+func ChannelJoin(s *discordgo.Session, j *discordgo.VoiceStateUpdate) {
+	if j.UserID == s.State.User.ID {
+		return
+	}
+
+	delegates.EscapeFromClarkov(s, j)
 }
